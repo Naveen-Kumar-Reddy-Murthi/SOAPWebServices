@@ -17,8 +17,14 @@ public class S1_ConsumingWebService {
 		GeoIPServiceSoap soap	= geoIpService.getGeoIPServiceSoap();// utility class meant for calling actual web service method
 		GeoIP geoIp = soap.getGeoIP(ip);//actual web service call
 		//GeoIo is output object
+		/**This can be identified using wsdl. In wsdl, there will be a part with following entries
+		 * <wsdl:service name="GeoIPService">// This is the utility class to get the object of actual web service class which contains services
+		 * <wsdl:port name="GeoIPServiceSoap" binding="tns:GeoIPServiceSoap">// This is the class which has actual web service public methods
+
+		 */
+		
 		System.out.println(geoIp.getCountryName());
 		
-	}//https://github.com/mnreddy7/SOAPWebServices.git
+	}
 
 }

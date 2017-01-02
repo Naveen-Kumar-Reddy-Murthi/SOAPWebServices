@@ -1,5 +1,6 @@
 package org.mnr.ws;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -48,7 +49,7 @@ public class S2_ProductCatalog {
 		return service.getProductList(category);
 	}
 	
-	public Set<Product> getProductsV2(String category){
+	public Collection<Product> getProductsV2(String category){
 		return service.getProductsV2(category);
 	}
 	@WebMethod/*(exclude=true)*/

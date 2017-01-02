@@ -1,7 +1,10 @@
 package org.mnr.ws.businessimpl;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.mnr.model.Product;
@@ -88,8 +91,8 @@ public class BIServiceImpl {
 		
 	}
 
-	public Set<Product> getProductsV2(String category) {
-		Set<Product> productSet = new LinkedHashSet<Product>();
+	public Collection<Product> getProductsV2(String category) {
+		List<Product> productSet = new ArrayList<Product>();
 		productSet.add(new Product("P1","1",22.145));
 		productSet.add(new Product("P2","2",202.145));
 		productSet.add(new Product("P3","3",32.145));

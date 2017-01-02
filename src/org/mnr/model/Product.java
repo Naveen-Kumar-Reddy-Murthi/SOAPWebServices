@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name="ProductDetails")
+@XmlRootElement(name="Product",namespace="http://www.mart.naveen.org")
 @XmlType(propOrder={"sku", "name", "price"}) 
 public class Product {
 	private String name; 

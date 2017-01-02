@@ -1,9 +1,13 @@
 package org.mnr.ws;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
 
 import org.mnr.model.Product;
 import org.mnr.ws.businessimpl.BIServiceImpl;
@@ -17,8 +21,9 @@ import org.mnr.ws.businessimpl.BIServiceImpl;
 @WebService(name="MartCatelogV2",
 			portName="MartCatelogPortV2",
 			serviceName="MartCatelogServiceV2",
-			endpointInterface="org.mnr.ws.SoapService")
-
+			endpointInterface="org.mnr.ws.SoapService",
+			targetNamespace="http://www.mart.naveen.org")
+@SOAPBinding(style=Style.RPC) 
 public class S4_StandardWebServiceWriting implements SoapService {
 	
 	BIServiceImpl service;
@@ -38,8 +43,7 @@ public class S4_StandardWebServiceWriting implements SoapService {
 	}
 	
 	@Override
-//	@WebResult(name="Product")
-	public Set<Product> getProductsV2(String category){
+	public Collection<Product> getProductsV2(String category){
 		return service.getProductsV2(category);
 	}
 	
